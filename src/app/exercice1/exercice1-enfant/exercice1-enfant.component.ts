@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-exercice1-enfant',
@@ -6,6 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercice1-enfant.component.css']
 })
 export class Exercice1EnfantComponent implements OnInit {
+	public compteur:number=0;
+	@Output() public myEvent: EventEmitter<boolean> = new EventEmitter();
+
+
+	addition(){
+		this.myEvent.emit(true);
+	}
+    
+    soustraction(){
+    	this.myEvent.emit(false);
+    }
+
 
   constructor() { }
 
